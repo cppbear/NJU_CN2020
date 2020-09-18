@@ -1,0 +1,30 @@
+language: python
+python:
+  - "3.6"
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y libffi-dev libpcap-dev
+install:
+  - python setup.py install
+script:
+  - python tests/test_addr.py
+  - python tests/test_ipv6.py
+  - python tests/test_ripv2.py
+  - python tests/test_addr.py
+  - python tests/test_llnetdev.py
+  - python tests/test_arp.py
+  - python tests/test_matcher.py
+  - python tests/test_scenarios.py
+  - python tests/test_null.py
+  - python tests/test_socket.py
+  - python tests/test_ethernet.py
+  - python tests/test_srpy.py
+  - python tests/test_hostfirewall.py
+  - python tests/test_tcp.py
+  - python tests/test_icmp.py
+    # temporarily remove uncritical apis
+    # - python tests/test_topo.py
+  - python tests/test_importer.py
+  - python tests/test_packet.py
+  - python tests/test_udp.py
+  - python tests/test_ipv4.py
